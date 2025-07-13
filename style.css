@@ -1,0 +1,106 @@
+/* Dropdown styles */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropbtn {
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(51,51,51,0.95);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background: #007bff;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-shadow: 1px 1px 4px #000;
+}
+nav {
+    background: rgba(51,51,51,0.85);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(0,123,255,0.85);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    box-shadow: 1px 1px 4px #000;
+}
+h1, h2 {
+    color: #fff;
+    text-shadow: 2px 2px 6px #000;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+ul li {
+    margin-bottom: 5px;
+}
+form {
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    max-width: 400px;
+    margin: 20px auto;
+}
+input[type="text"], input[type="number"], input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+}
+input[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: #0056b3;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrow Money</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, ul, li, p, span, div {
+            color: black !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2a4d8f !important;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <span id="service-nav"></span> |
+        <a href="terms.html">Terms</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <h1 id="service-title">Borrowing Money</h1>
+    <div id="borrow-section" style="display:none;">
+        <div style="display: flex; align-items: flex-start;">
+            <img src="./assets/sim1.jpg" alt="Borrowing Money" style="width:240px; height:auto; margin-right:28px; border-radius:12px;" />
+            <div>
+                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px;">Terms &amp; Conditions</div>
+                <ul style="margin-bottom:15px;">
+                    <li>Maximum Amount: K200</li>
+                    <li>Minimum Amount: K50</li>
+                    <li>Interest Rate: 30%</li>
+                    <li>Duration: Within 2 weeks (Not more than 2 weeks)</li>
+                </ul>
+                <form action="mailto:info@yourbusiness.com" method="post" enctype="text/plain">
+                    <label>Name:</label><br>
+                    <input type="text" name="name" required><br>
+                    <label>Amount to borrow:</label><br>
+                    <input type="number" name="amount" min="200" max="500" required><br>
+                    <label>Reason:</label><br>
+                    <input type="text" name="reason" required><br>
+                    <label>Repayment date:</label><br>
+                    <input type="date" name="repayment" required><br>
+                    <label>Phone or Email:</label><br>
+                    <input type="text" name="contact" required><br>
+                    <label>BSP Account Number:</label><br>
+                    <input type="text" name="bsp_account" required><br>
+                    <label>Upload Photo/ID (optional):</label><br>
+                    <input type="file" name="photo"><br><br>
+                    <input type="submit" value="Submit Request">
+                </form>
+            </div>
+        </div>
+    <div id="deposit-section" style="display:none;">
+        <div style="display: flex; align-items: flex-start;">
+            <img src="./assets/sim2.jpg" alt="Deposit Cash" style="width:180px; height:auto; margin-right:24px; border-radius:10px;" />
+            <div>
+                <div style="margin-bottom:10px; font-size:1.08em;">To deposit cash, visit <b>TOA3_Room No: N1</b> or contact me using my details. Your deposit will be processed quickly and securely.</div>
+                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px; font-size:1.1em;">Terms &amp; Conditions</div>
+                <ul style="margin-bottom:15px; list-style-type: disc;">
+                    <li><b>*Maximum Amount:</b> K200</li>
+                    <li><b>*Minimum Amount:</b> K20</li>
+                    <li><b>*Interest Rate:</b> 5%</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="withdraw-section" style="display:none;">
+        <div style="display: flex; align-items: flex-start;">
+            <img src="./assets/sim2.jpg" alt="Cash Withdrawal" style="width:180px; height:auto; margin-right:24px; border-radius:10px;" />
+            <div>
+                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px;">Terms &amp; Conditions</div>
+                <ul style="margin-bottom:15px;">
+                    <li>Maximum Amount: K200</li>
+                    <li>Minimum Amount: K20</li>
+                    <li>Interest Rate: 5%</li>
+                </ul>
+                <div style="font-weight:bold; text-decoration:underline; margin-bottom:5px;">Target Customers</div>
+                <p>People who have Mobile Banking on their phones. If you have no Mobile Banking then you are an ineligible customer.</p>
+                <p>Come to TOA3_Room No: N1 OR you may contact me via my contact details to do Cash Withdrawal.</p>
+            </div>
+        </div>
+    </div>
+    <div id="flex-section" style="display:none;">
+        <div style="display: flex; align-items: flex-start;">
+            <img src="./assets/con1.jpg" alt="Flex Sales" style="width:180px; height:auto; margin-right:24px; border-radius:10px;" />
+            <div>
+                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px;">Terms &amp; Conditions</div>
+                <ul style="margin-bottom:15px;">
+                    <li>Minimum: K3 Flex</li>
+                    <li>Maximum: K10 Flex</li>
+                    <li>Interest: K1</li>
+                </ul>
+                <div style="font-weight:bold; margin-bottom:5px;">Flex Types</div>
+                <ul style="margin-bottom:15px;">
+                    <li>Digicel</li>
+                    <li>Vodafone</li>
+                    <li>Telikom</li>
+                </ul>
+                <p>Come to TOA3_N1 OR you may contact me via my contact details. If you are far away you can credit and later give me cash (if you don't have Mobile Banking) or transfer using Mobile Banking to my account.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Show only the relevant section and update heading and nav based on hash
+        function showSection() {
+            var hash = window.location.hash;
+            var title = document.getElementById('service-title');
+            var nav = document.getElementById('service-nav');
+            if (hash === '' || hash === '#borrow') {
+                title.textContent = 'Borrowing Money';
+                nav.innerHTML = '<a href="borrow.html#borrow" style="font-weight:bold; color:#007bff;">Borrowing Money</a>';
+                document.getElementById('borrow-section').style.display = 'block';
+                document.getElementById('deposit-section').style.display = 'none';
+                document.getElementById('withdraw-section').style.display = 'none';
+                document.getElementById('flex-section').style.display = 'none';
+            } else if (hash === '#deposit') {
+                title.textContent = 'Deposit Cash';
+                nav.innerHTML = '<a href="borrow.html#deposit" style="font-weight:bold; color:#007bff;">Deposit Cash</a>';
+                document.getElementById('borrow-section').style.display = 'none';
+                document.getElementById('deposit-section').style.display = 'block';
+                document.getElementById('withdraw-section').style.display = 'none';
+                document.getElementById('flex-section').style.display = 'none';
+            } else if (hash === '#withdraw') {
+                title.textContent = 'Cash Withdrawal';
+                nav.innerHTML = '<a href="borrow.html#withdraw" style="font-weight:bold; color:#007bff;">Cash Withdrawal</a>';
+                document.getElementById('borrow-section').style.display = 'none';
+                document.getElementById('deposit-section').style.display = 'none';
+                document.getElementById('withdraw-section').style.display = 'block';
+                document.getElementById('flex-section').style.display = 'none';
+            } else if (hash === '#flex') {
+                title.textContent = 'Flex Sales using Top-Up Service';
+                nav.innerHTML = '<a href="borrow.html#flex" style="font-weight:bold; color:#007bff;">Flex Sales using Top-Up Service</a>';
+                document.getElementById('borrow-section').style.display = 'none';
+                document.getElementById('deposit-section').style.display = 'none';
+                document.getElementById('withdraw-section').style.display = 'none';
+                document.getElementById('flex-section').style.display = 'block';
+            }
+        }
+        window.addEventListener('hashchange', showSection);
+        window.addEventListener('DOMContentLoaded', showSection);
+    </script>
+</body>
+</html>
